@@ -1,0 +1,86 @@
+.Header {
+	width: 100%;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
+	padding-inline: 1.5rem;
+	border-bottom: 1px solid rgb(211, 211, 211, 0.4);
+
+	&_Logo {
+
+		font-size: 30px;
+		font-weight: 500;
+	}
+
+	&_Menu {
+		display: flex;
+	}
+
+	&_MenuItem {
+		padding: 2rem 1rem;
+		font-weight: 600;
+	}
+
+	&_MenuLink {
+		transition: all ease 200ms;
+	}
+
+
+}
+
+.Menu_line {
+	display: none;
+	color: #ffffff;
+}
+
+@media only screen and (max-width: 900px) {
+	.Header {
+		padding-top: 20px;
+		display: flex;
+		flex-direction: column;
+
+		&_MenuItem {
+			padding: 1rem 0.5rem;
+		}
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.Menu_line {
+		display: block;
+		position: absolute;
+		right: 10px;
+		cursor: pointer;
+		z-index: 6;
+	}
+
+	.Header {
+		padding: 1rem;
+		flex-direction: row;
+
+		&_Menu {
+			width: 100%;
+			height: 100vh;
+			display: flex;
+			flex-flow: column;
+			justify-content: center;
+			align-items: center;
+			gap: 25px;
+			position: fixed;
+			left: -100%;
+			top: 0%;
+			bottom: 0%;
+			right: 0%;
+			background-color: rgb(12, 10, 39);
+			color: #fff;
+			font-size: 30px;
+			z-index: 5;
+			transition: left 800ms ease;
+		}
+	}
+
+	.actvie_menu {
+		left: 0%;
+	}
+}

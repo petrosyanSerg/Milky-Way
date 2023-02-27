@@ -1,0 +1,247 @@
+.Page {
+	width: 100%;
+	height: 90vh;
+	padding: 1rem;
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+
+	&_Image {
+		z-index: 3;
+		max-width: 800px;
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		grid-column: 1/3;
+		grid-row: 1/3;
+
+	}
+
+	&_Image_Tag {
+		width: 300px;
+	}
+
+	&_Image_Struct {
+		object-fit: contain;
+		width: 100px;
+		height: 150px;
+		position: absolute;
+		left: 35%;
+		transform: rotate(45deg);
+		bottom: 2%;
+	}
+
+	.Info {
+		display: flex;
+		grid-column: 3/3;
+		grid-row: 2/1;
+
+		&_Block {
+			padding-block: 1rem;
+			display: flex;
+			flex-direction: column;
+			flex-wrap: nowrap;
+			justify-content: space-between;
+			gap: 10px;
+		}
+
+		&_Title {
+			font-size: 30px;
+		}
+
+		&_Pharagraps {
+			height: 25vh;
+			font-size: 20px;
+		}
+
+		&_Wiki {
+			font-size: 20px;
+		}
+
+		&_Link {
+			color: rgb(255, 255, 255, 0.5);
+			text-decoration: underline;
+		}
+	}
+}
+
+
+
+.Links {
+	width: 100%;
+	grid-column: 3/3;
+	grid-row: 3/2;
+	display: flex;
+	flex-flow: column nowrap;
+	gap: 20px;
+
+	&_Button {
+
+		display: flex;
+		gap: 20px;
+		width: 100%;
+		padding: 1rem;
+		cursor: pointer;
+		border: 1px solid rgb(255, 255, 255, 0.5);
+		transition: all 200ms ease;
+
+		a {
+			width: 100%;
+		}
+
+		&:hover {
+			background-color: rgb(255, 255, 255, 0.2);
+		}
+	}
+
+	&_Number {
+		color: rgb(255, 255, 255, 0.5);
+	}
+}
+
+.CardBlock {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	grid-column: 1/4;
+
+	&_Cards {
+		width: 100%;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+	}
+
+	&_Card {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		padding: 2rem;
+		border: 1px solid rgb(249, 249, 250, 0.5);
+	}
+
+	&_Title {
+		color: rgb(249, 249, 250, 0.5);
+		font-size: 16px;
+		font-weight: 700;
+	}
+
+	&_Value {
+		font-size: 25px;
+		font-weight: 700;
+	}
+}
+
+@media only screen and (max-width: 900px) {
+	.Page {
+		display: flex;
+		flex-direction: column;
+
+		&_Image_Tag {
+			width: 200px;
+		}
+
+		&_Image_Struct {
+			width: 70px;
+			height: 100px;
+			position: absolute;
+			left: 30%;
+			transform: rotate(45deg);
+			bottom: 2%;
+		}
+
+		.Info {
+			&_Pharagraps {
+				height: 10vh;
+			}
+		}
+
+	}
+
+	.CardBlock {
+
+		&_Cards {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 10px;
+		}
+
+		&_Card {
+			padding: 0.5rem;
+			border: 1px solid rgb(249, 249, 250, 0.5);
+		}
+	}
+
+	.Links {
+		gap: 10px;
+
+
+		&_Button {
+			padding: 0.75rem;
+
+			a {
+				width: 100%;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.Page {
+		padding: 0.5rem;
+
+		&_Image_Tag {
+			width: 100px;
+		}
+
+		&_Image_Struct {
+			object-fit: contain;
+			width: 60px;
+			height: 70px;
+			position: absolute;
+			left: 30%;
+			transform: rotate(45deg);
+			bottom: 1%;
+		}
+
+		.Info {
+
+			&_Block {
+				padding-block: 0.5rem;
+
+			}
+
+
+			&_Pharagraps {
+				height: 20vh;
+			}
+		}
+
+	}
+
+	.CardBlock {
+		font-size: 16px;
+
+		&_Cards {
+			gap: 5px;
+		}
+
+		&_Card {
+			padding: 0.5rem;
+			border: 1px solid rgb(249, 249, 250, 0.5);
+		}
+
+		&_Title {
+			color: rgb(249, 249, 250, 0.5);
+			font-size: 12px;
+			font-weight: 700;
+		}
+
+		&_Value {
+			font-size: 18px;
+			font-weight: 700;
+		}
+	}
+}
