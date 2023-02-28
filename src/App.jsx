@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import MainPage from "./components/Page/MainPage/MainPage";
 import Page from "./components/Page/Page";
 import Layout from "./components/Layout";
-
+import Music from "./components/Music/Music";
 
 
 //data
@@ -35,6 +35,7 @@ function App() {
 					<Route path="neptune/*" element={<Page data={neptuneData} />} />
 				</Route>
 			</Routes>
+			<Music />
 		</>
 	);
 }
